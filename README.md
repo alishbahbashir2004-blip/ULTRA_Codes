@@ -14,7 +14,7 @@ The repository provides the preprocessing pipeline, embedding generation procedu
 
 The following diagram illustrates the overall architecture of the ULTRA framework, showing the dual-embedding pipeline and the query-length-adaptive routing mechanism:
 
-![ULTRA System Architecture](images/ULTRA_architecture.png)
+![ULTRA System Architecture](ULTRA_Architecture (1).pdf)
 
 *Figure 1: ULTRA architecture showing the dual pathways for headline (short query) and full-content (long query) embeddings, with PCA dimensionality reduction and ChromaDB vector storage.*
 
