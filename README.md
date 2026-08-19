@@ -10,6 +10,29 @@ The repository provides the preprocessing pipeline, embedding generation procedu
 
 ---
 
+## **System Architecture**
+
+The following diagram illustrates the overall architecture of the ULTRA framework, showing the dual-embedding pipeline and the query-length-adaptive routing mechanism:
+
+![ULTRA System Architecture](images/ULTRA_architecture.png)
+
+*Figure 1: ULTRA architecture showing the dual pathways for headline (short query) and full-content (long query) embeddings, with PCA dimensionality reduction and ChromaDB vector storage.*
+
+The architecture consists of two main processing pathways:
+
+1. **Headline Pathway (Short Queries):** 
+   - Processes queries with length < 150 characters
+   - Uses CLS pooling with PCA 64D reduction
+   - Optimized for concise semantic retrieval
+
+2. **Content Pathway (Long Queries):**
+   - Processes queries with length ≥ 150 characters
+   - Uses chunking with 50-token overlap and Mean pooling
+   - Applies PCA 128D reduction
+   - Captures richer contextual information
+
+The routing mechanism dynamically selects the appropriate pathway based on query length, ensuring optimal performance and efficiency.
+
 ## **Dataset**
 The experiments use the Urdu News Dataset, originally obtained from Kaggle:
 
